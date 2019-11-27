@@ -1,5 +1,5 @@
 class AddAnswersColumnDefault < ActiveRecord::Migration[6.0]
   def change
-    change_column_default(:answers, :right_answer, 'variant_1')
+    change_column_default(:answers, :correct, false)
   end
 end
