@@ -37,3 +37,9 @@ answers = Answer.create([
                             { body: 'Each component of the model-view-controller architecture has its place within the app subdirectory', correct: true, question_id: questions[3].id },
                             { body: 'Check for packages not declared in package.json', correct: true, question_id: questions[4].id }
                         ])
+user_history = UserHistory.create([
+                                      { user: users[0].login, tests: tests[0].title, completed: true, users_id: users[0].id, tests_id: tests[0].id },
+                                      { user: users[0].login, tests: tests[1].title, completed: true, users_id: users[0].id, tests_id: tests[1].id },
+                                      { user: users[0].login, tests: tests[2].title, completed: false, users_id: users[0].id, tests_id: tests[2].id },
+                                      { user: users[3].login, tests: tests[3].title, completed: false, users_id: users[1].id, tests_id: tests[3].id }
+                                  ])
