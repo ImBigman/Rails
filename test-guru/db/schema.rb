@@ -45,8 +45,6 @@ ActiveRecord::Schema.define(version: 2019_11_29_062538) do
   end
 
   create_table "user_histories", force: :cascade do |t|
-    t.string "user"
-    t.string "tests"
     t.boolean "completed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
