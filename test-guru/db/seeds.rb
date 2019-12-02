@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 users = User.create([
-                         { first_name: 'Donatello', second_name: 'Splinters', login: 'Donny', email: 'ninja_turtles_1@gmail.com' },
-                         { first_name: 'Raphael', second_name: 'Splinters', login: 'Raf', email: 'ninja_turtles_2@gmail.com' },
-                         { first_name: 'Michelangelo', second_name: 'Splinters', login: 'Mike', email: 'ninja_turtles_3@gmail.com' },
-                         { first_name: 'Leonardo', second_name: 'Splinters', login: 'Leo', email: 'ninja_turtles_4@gmail.com' }
+                         { first_name: 'Donatello', last_name: 'Splinters', login: 'Donny', email: 'ninja_turtles_1@gmail.com' },
+                         { first_name: 'Raphael', last_name: 'Splinters', login: 'Raf', email: 'ninja_turtles_2@gmail.com' },
+                         { first_name: 'Michelangelo', last_name: 'Splinters', login: 'Mike', email: 'ninja_turtles_3@gmail.com' },
+                         { first_name: 'Leonardo', last_name: 'Splinters', login: 'Leo', email: 'ninja_turtles_4@gmail.com' }
                     ])
 categories = Category.create([
                                   { title: 'Backend' },
@@ -17,11 +17,11 @@ categories = Category.create([
                                   { title: 'Full stack' }
                              ])
 tests = Test.create([
-                         { title: 'CSS', level: 1, category_id: categories[1].id },
-                         { title: 'HTML', level: 0, category_id: categories[1].id },
-                         { title: 'Basics of JS', level: 1, category_id: categories[1].id },
-                         { title: 'Ruby on Rails', level: 3, category_id: categories[0].id },
-                         { title: 'Package managers', level: 2, category_id: categories[2].id }
+                         { title: 'CSS', level: 1, category_id: categories[1].id, author_id: users[0].id },
+                         { title: 'HTML', level: 0, category_id: categories[1].id, author_id: users[1].id },
+                         { title: 'Basics of JS', level: 1, category_id: categories[1].id, author_id: users[1].id  },
+                         { title: 'Ruby on Rails', level: 3, category_id: categories[0].id, author_id: users[2].id  },
+                         { title: 'Package managers', level: 2, category_id: categories[2].id, author_id: users[3].id  }
                     ])
 questions = Question.create([
                                 { body: 'Basic SEO', test_id: tests[1].id },
