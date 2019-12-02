@@ -17,11 +17,11 @@ categories = Category.create([
                                   { title: 'Full stack' }
                              ])
 tests = Test.create([
-                         { title: 'CSS', level: 1, category_id: categories[1].id },
-                         { title: 'HTML', level: 0, category_id: categories[1].id },
-                         { title: 'Basics of JS', level: 1, category_id: categories[1].id },
-                         { title: 'Ruby on Rails', level: 3, category_id: categories[0].id },
-                         { title: 'Package managers', level: 2, category_id: categories[2].id }
+                         { title: 'CSS', level: 1, category_id: categories[1].id, author_id: users[0].id },
+                         { title: 'HTML', level: 0, category_id: categories[1].id, author_id: users[1].id },
+                         { title: 'Basics of JS', level: 1, category_id: categories[1].id, author_id: users[1].id  },
+                         { title: 'Ruby on Rails', level: 3, category_id: categories[0].id, author_id: users[2].id  },
+                         { title: 'Package managers', level: 2, category_id: categories[2].id, author_id: users[3].id  }
                     ])
 questions = Question.create([
                                 { body: 'Basic SEO', test_id: tests[1].id },

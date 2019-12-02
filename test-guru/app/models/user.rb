@@ -4,5 +4,5 @@ class User < ApplicationRecord
   end
   has_many :user_histories
   has_many :tests, through: :user_histories
-  has_and_belongs_to_many :tests
+  has_many :author_tests, class_name: 'Test', foreign_key: :author_id
 end

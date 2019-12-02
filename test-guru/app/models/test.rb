@@ -6,5 +6,5 @@ class Test < ApplicationRecord
   has_many :questions
   has_many :user_histories
   has_many :users, through: :user_histories
-  has_and_belongs_to_many :users
+  belongs_to :author, class_name: 'User'
 end
