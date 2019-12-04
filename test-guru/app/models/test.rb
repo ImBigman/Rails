@@ -1,4 +1,8 @@
 class Test < ApplicationRecord
+  def self.sorted_by_category(category)
+    by_category(category).order(title: :desc).pluck(:title)
+  end
+
   belongs_to :category
   has_many :questions
   has_many :user_histories
@@ -12,5 +16,5 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :normal, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :by_category, ->(category) { joins(:category).where('categories.title = :category', category: category).pluck(:title) }
+  scope :by_category, ->(category) { joins(:category).where('categories.title = :category', category: category) }
 end
