@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_104625) do
+ActiveRecord::Schema.define(version: 2019_12_04_094642) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 2019_12_02_104625) do
     t.boolean "completed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "users_id"
-    t.integer "tests_id"
-    t.index ["tests_id"], name: "index_user_histories_on_tests_id"
-    t.index ["users_id"], name: "index_user_histories_on_users_id"
+    t.integer "user_id"
+    t.integer "test_id"
+    t.index ["test_id"], name: "index_user_histories_on_test_id"
+    t.index ["user_id"], name: "index_user_histories_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,6 +69,6 @@ ActiveRecord::Schema.define(version: 2019_12_02_104625) do
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"
-  add_foreign_key "user_histories", "tests", column: "tests_id"
-  add_foreign_key "user_histories", "users", column: "users_id"
+  add_foreign_key "user_histories", "tests"
+  add_foreign_key "user_histories", "users"
 end
