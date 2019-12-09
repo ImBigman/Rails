@@ -1,10 +1,2 @@
-<h3> Создание нового вопроса. </h3>
-<form action="/tests/<%= params[:test_id] %>/questions" method="post">
-  <input  name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-  <p>
-    <label for="question-body">Вопрос:</label><br>
-    <input type="text" name="question[body]" id="question-body">
-  </p>
-
-  <input type="submit" value="Создать">
-</form>
+<%= render 'form' %>
+<%= link_to 'Back', test_questions_path %>

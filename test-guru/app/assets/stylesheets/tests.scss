@@ -1,3 +1,9 @@
-// Place all the styles related to the tests controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+table, th, td {
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+}
+.mid_align {
+  text-align: center
+}
