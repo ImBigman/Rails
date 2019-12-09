@@ -1,31 +1,39 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index create]
-  before_action :find_questions, only: %i[show destroy]
+  before_action :find_test, only: %i[index create new]
+  before_action :find_questions, only: %i[show destroy update edit]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_questions_not_found
 
-  def index
-    render inline: '<p> Все вопросы "<%= @test.title %>" теста: <%= @test.questions.pluck(:body).join(", ") %> </p>'
+  def index; end
+
+  def show; end
+
+  def new
+    @question = Question.new
   end
 
-  def show
-    render inline: '<p>Что вы можете рассказать о <%= @question.body %>, в контексте <%= @question.test.title %>?</p>'
-  end
-
-  def new; end
+  def edit; end
 
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to test_questions_path
+      redirect_to @question
     else
-      render 'new'
+      render :new
+    end
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
     end
   end
 
   def destroy
     @question.destroy
-    redirect_to test_questions_path
+    redirect_to @question.test
   end
 
   private

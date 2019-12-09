@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Level</th>
+    <th>Category</th>
+    <th>Question quantity</th>
+    <th>Question</th>
+  </tr>
+  <tr>
+      <td><%= @test.title %></td>
+      <td class="mid_align"><%= @test.level %></td>
+      <td><%= @test.category.title %></td>
+      <td class="mid_align"><%= @test.questions.count %></td>
+      <td><% @test.questions.each do |question| %>
+          <p> <%= question.body  %> || <%= link_to 'Edit', edit_question_path(question) %> ||
+          <%= link_to 'Delete',
+                      question_path(question),
+                      method: :delete,
+                      data: {confirm: 'Are you sure?'} %></p>
+        <% end %></td>
+  </tr>
+</table>
+<%= link_to 'Edit', edit_test_path(@test) %> ||
+<%= link_to 'Back', tests_path %> ||
+<%= link_to 'Add question', new_test_question_path(@test) %>

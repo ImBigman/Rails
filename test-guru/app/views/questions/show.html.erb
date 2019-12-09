@@ -1,3 +1,12 @@
-<p>
-  <%= @question.body %>
-</p>
+<p>Что вы можете рассказать о <%= @question.body %>, в контексте <%= @question.test.title %>?</p>
+<table>
+  <tr>
+    <th>Test's title</th>
+    <th>Question</th>
+  </tr>
+  <tr>
+    <td><%= @question.test.title  %></td>
+    <td><%= @question.body %></td>
+  </tr>
+</table>
+<%= link_to 'Back', test_path(@question.test) %>
