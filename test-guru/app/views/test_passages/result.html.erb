@@ -1,0 +1,9 @@
+<h2> The  '<%= @test_passage.test.title %>' test has been completed! </h2>
+
+<br> <h2> Your's correct answers is: <%= @test_passage.correct_questions %></h2>
+<% if @test_passage.percentage_result < 85 %>
+  <h2 style='color: red;'>Your result is: <%= @test_passage.percentage_result %> % - you failed!</h2>
+    <%else %>
+  <h2 style='color: green;'><%= @test_passage.percentage_result %> % - you passed!</h2>
+<% end %>
+<h3><%= link_to 'Back to all tests', tests_path %></h3>
