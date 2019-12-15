@@ -1,12 +1,15 @@
-<p>Что вы можете рассказать о <%= @question.body %>, в контексте <%= @question.test.title %>?</p>
+<h2><%= @question.test.title %> question </h2>
+<p>Что вы можете рассказать о <%= @question.body %> ?</p>
 <table>
   <tr>
-    <th>Test's title</th>
-    <th>Question</th>
-  </tr>
-  <tr>
-    <td><%= @question.test.title  %></td>
-    <td><%= @question.body %></td>
+    <td><strong>Test's title: </strong><%= @question.test.title  %></td>
+    <td><strong>Question: </strong><%= @question.body %></td>
   </tr>
 </table>
+<h3>Answers</h3>
+<%= link_to 'New answer', new_question_answer_path(@question) %>
+<ol>
+  <%= render @question.answers %>
+</ol>
+
 <%= link_to 'Back', test_path(@question.test) %>
