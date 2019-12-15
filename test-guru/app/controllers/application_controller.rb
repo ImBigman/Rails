@@ -1,14 +1,12 @@
 class ApplicationController < ActionController::Base
 
   helper_method :current_user,
-                :logged_in?,
-                :store_location,
-                :redirect_back_or
+                :logged_in?
   private
 
   def authenticate_user!
     unless current_user
-      store_location
+      session[:forwarding_url] = request.url if request.get?
       redirect_to login_path, congratulation: 'Enter your email and password please!'
     end
 
@@ -17,15 +15,6 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def store_location
-    session[:forwarding_url] = request.url if request.get?
-  end
-
-  def redirect_back_or(default)
-    redirect_to(session[:forwarding_url] || default)
-    session.delete(:forwarding_url)
   end
 
   def logged_in?

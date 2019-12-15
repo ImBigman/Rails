@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_back_or(root_path)
+      redirect_to session[:forwarding_url] || root_path
     else
       flash.now[:alert] = 'Please insert correct login and password!'
       render :new
