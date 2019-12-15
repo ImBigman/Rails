@@ -1,6 +1,6 @@
 <h2> The  '<%= @test_passage.test.title %>' test has been completed! </h2>
 
-<br> <h2> Your's correct answers is: <%= @test_passage.correct_questions %></h2>
+<br> <h2>Dear <%= current_user.login %>, your's correct answers is: <%= @test_passage.correct_questions %></h2>
 <% if @test_passage.success?%>
   <h2 style='color: red;'>Your result is: <%= @test_passage.percentage_result %> % - you failed!</h2>
   <% else %>

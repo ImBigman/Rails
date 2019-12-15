@@ -10,7 +10,14 @@
   </head>
 
   <body>
-  <div class="wrapper">
+  <div>
+  <%= render 'shared/header' %>
+  </div>
+  <% if logged_in? %>
+    <p class="nav user">Welcome, <strong><%= current_user.login %></strong>  Guru!<br>
+      <%= link_to 'Logout', sessions_path, method: :delete %> </p>
+  <% end %>
+    <div class="wrapper">
 
       <div class="content">
         <%= yield %>
