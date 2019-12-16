@@ -1,0 +1,15 @@
+<%= form_with url: sessions_path, local:true  do |form|  %>
+  <%= flash_header %>
+  <p>
+    <%= form.label :login %><br>
+    <%= form.text_field :login, id: :login %>
+  </p>
+
+  <p>
+    <%= form.label :password %><br>
+    <%= form.password_field :password, id: :password %>
+  </p>
+
+  <p><%= form.submit %></p>
+<% end %><br>
+<strong><%= link_to 'Back', root_path %></strong>

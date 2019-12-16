@@ -5,7 +5,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
 
-  BOUNDARY_OF_SUCCESS = 85.freeze
+  BOUNDARY_OF_SUCCESS = 85
 
   before_update do
     self.current_question = next_question
