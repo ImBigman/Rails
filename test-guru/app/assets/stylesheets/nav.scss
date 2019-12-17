@@ -2,7 +2,36 @@
   padding: 20px;
   text-align: right;
 }
-
+.nav.user-hello{
+  padding: 20px;
+  text-align: center;
+}
+.nav.user-email {
+  border-bottom: 1px solid #3c85e0;
+}
+.nav.nav-admin {
+  height: 35px;
+  padding: 12px;
+  line-height: 35px;
+  color: #ffffff;
+  background-color: #926d4d;
+  margin-bottom: 20px;
+}
+.nav.nav-admin a {
+  color: #ffffff;
+}
+.nav-admin.title {
+  font-size: 140%;
+  font-weight: bold;
+}
+.nav-admin.user {
+  float: right;
+  font-size: 120%;
+  font-weight: bold;
+}
+.nav-admin.user-email {
+  text-decoration: underline;
+}
 .top-menu {
   background: antiquewhite;
   padding: 20px;
@@ -11,7 +40,6 @@
   display: table;
   clear: both;
 }
-
 .menu-main {
   list-style: none;
   margin: 0;

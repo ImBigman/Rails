@@ -1,0 +1,11 @@
+<table>
+  <tr>
+    <th>Question</th>
+  </tr>
+  <tr>
+     <td><% @test.questions.each do |question| %>
+        <p> <%= question.body  %> <%= link_to 'Edit', edit_admin_question_path(question) %>
+      <% end %></td>
+  </tr>
+</table>
+<%= link_to 'Back', admin_tests_path(@test) %>

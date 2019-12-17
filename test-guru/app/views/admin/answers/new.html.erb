@@ -1,0 +1,6 @@
+<h2>New Answer</h2>
+
+<p><%= @question.body %></p>
+
+<%= render 'form', answer: @answer %>
+<%= link_to 'Back', admin_question_path(@question) %>

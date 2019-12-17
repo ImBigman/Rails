@@ -1,23 +1,23 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  helper_method :current_user,
-                :logged_in?
-  private
+  protected
 
-  def authenticate_user!
-    unless current_user
-      session[:forwarding_url] = request.url if request.get?
-      redirect_to login_path, congratulation: 'Enter your email and password please!'
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name login])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name login])
+    devise_parameter_sanitizer.permit(:sign_in, keys: %i[first_name last_name login])
+  end
+
+  def after_sign_in_path_for(resource)
+    flash[:notice] = "Hello, #{current_user.first_name}!"
+    if current_user.admin?
+      admin_tests_path
+    else
+      super
     end
-
-    cookies[:login] = current_user&.login
-  end
-
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
   end
 end
+
+
