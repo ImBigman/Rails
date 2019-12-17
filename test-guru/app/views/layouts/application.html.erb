@@ -10,16 +10,15 @@
   </head>
 
   <body>
-  <div>
   <%= render 'shared/header' %>
-  </div>
-  <% if logged_in? %>
-    <p class="nav user">Welcome, <strong><%= current_user.login %></strong>  Guru!<br>
-      <%= link_to 'Logout', sessions_path, method: :delete %> </p>
+  <% if user_signed_in? %>
+    <p class="nav user">Welcome, <strong><%= current_user.login %></strong>  Guru! :::
+      <%= link_to 'Logout',  destroy_user_session_path, method: :delete, class: 'link' %> </p>
   <% end %>
-    <div class="wrapper">
 
+    <div class="wrapper">
       <div class="content">
+         <%= flash_header %>
         <%= yield %>
       </div>
       <div class="footer">

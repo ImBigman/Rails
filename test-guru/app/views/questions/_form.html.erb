@@ -1,5 +1,5 @@
 <%= question_header(@question) %>
-<%= form_with model: [@test, @question], local:true do |form|  %>
+<%= form_with model: [:admin, @tests, @question], local:true do |form|  %>
 <%= render 'shared/errors', resource: @question %>
   <p>
     <%= form.label :body %><br>
