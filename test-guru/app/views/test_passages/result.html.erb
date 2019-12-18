@@ -1,9 +1,10 @@
-<h2> The  '<%= @test_passage.test.title %>' test has been completed! </h2>
+<h1><%= t('.header', test: @test_passage.test.title) %> </h1>
 
-<br> <h2>Dear <%= current_user.login %>, your's correct answers is: <%= @test_passage.correct_questions %></h2>
+<br> <h2><%= t('.message', user: current_user.login, count: @test_passage.correct_questions) %> </h2>
+<br>
 <% if @test_passage.success?%>
-  <h2 style='color: red;'>Your result is: <%= @test_passage.percentage_result %> % - you failed!</h2>
+  <h2 style='color: #b70000;'><%= t('.fail', result:@test_passage.percentage_result)%> </h2>
   <% else %>
-  <h2 style='color: green;'><%= @test_passage.percentage_result %> % - you passed!</h2>
- <% end %>
-<h3><%= link_to 'Back to all tests', tests_path %></h3>
+  <h2 style='color: green;'><%= t('.success', result:@test_passage.percentage_result)%></h2>
+ <% end %><br>
+<%= link_to t('.back to tests'), tests_path, class: 'button' %>

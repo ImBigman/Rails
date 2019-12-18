@@ -1,7 +1,7 @@
 <tr>
-  <td><%= test.title %></td>
+  <td class="mid_align"><%= test.title %></td>
   <td class="mid_align"><%= test.level %></td>
-  <td><%= test.category.title %></td>
+  <td class="mid_align"><%= test.category.title %></td>
   <td class="mid_align"><%= test.questions.count %></td>
-  <td><%= button_to 'Start', start_test_path(test) %></td>
+  <td class="mid_align"><%= button_to t('tests.index.start'), start_test_path(test) %></td>
 </tr>
