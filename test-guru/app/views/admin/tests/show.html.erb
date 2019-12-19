@@ -1,18 +1,18 @@
-<table>
-  <tr>
+<table class="table mt-3">
+  <tr class="text-center" >
     <th><%= t('.title') %></th>
     <th><%= t('.level') %></th>
     <th><%= t('.category') %></th>
     <th><%= t('.question quantity') %></th>
     <th><%= t('.question') %></th>
   </tr>
-  <tr>
+  <tr class="text-center" >
       <td><%= @test.title %></td>
       <td class="mid_align"><%= @test.level %></td>
       <td><%= @test.category.title %></td>
       <td class="mid_align"><%= @test.questions.count %></td>
-      <td><% @test.questions.each do |question| %>
-          <p><li style="line-height: 200%"> <%= question.body  %> &nbsp;   <%= link_to t('actions.show'), admin_question_path(question) %> ::: <%= link_to t('actions.edit'), edit_admin_question_path(question) %> :::
+      <td class="text-left"><% @test.questions.each do |question| %>
+          <p><li style="line-height: 200%"> <%= question.body  %> &nbsp;<br>   <%= link_to t('actions.show'), admin_question_path(question) %> ::: <%= link_to t('actions.edit'), edit_admin_question_path(question) %> :::
           <%= link_to t('actions.delete'),
                       admin_question_path(question),
                       method: :delete,
@@ -20,6 +20,6 @@
         <% end %></td>
   </tr>
 </table>
-<%= link_to t('actions.edit'), edit_admin_test_path(@test), class: 'button' %>
-<%= link_to t('actions.back'), admin_tests_path, class: 'button' %>
-<%= link_to t('.add question'), new_admin_test_question_path(@test), class: 'button' %>
+<%= link_to t('actions.edit'), edit_admin_test_path(@test), class: 'btn btn-outline-secondary' %>
+<%= link_to t('actions.back'), admin_tests_path, class: 'btn btn-outline-secondary' %>
+<%= link_to t('.add question'), new_admin_test_question_path(@test), class: 'btn btn-outline-secondary' %>

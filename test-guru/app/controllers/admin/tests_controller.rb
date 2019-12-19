@@ -1,6 +1,7 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :authenticate_user!, only: %i[new show edit update destroy start]
+  before_action :authenticate_user!, only: %i[index new show edit update destroy]
   before_action :find_test, only: %i[show edit update destroy start]
+  before_action :admin_required!
 
   def index
     @tests = Test.all

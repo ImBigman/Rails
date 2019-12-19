@@ -1,0 +1,42 @@
+@import "bootstrap";
+@import "nav";
+@import "tests";
+@import "flash_allert";
+@import "scaffolds";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.content {
+    flex: 1 0 auto;
+    padding: 20px;
+    line-height: 30px;
+}
+.link {
+    font-size: medium;
+    text-decoration: none;
+    font-family: 'Roboto',Arial,sans-serif; color: #000;
+}
+.hover {
+  text-decoration: none;
+}
+.footer {
+    padding: 15px ;
+    flex: 0 0 auto;
+    background-color: antiquewhite;
+    display: block;  height: 70px; width: 100%;
+    text-align: center;
+    line-height: 10px;
+    font-size: medium;
+    font-family: 'Roboto',Arial,sans-serif; color: #000;
+}

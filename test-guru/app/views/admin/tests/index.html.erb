@@ -1,16 +1,14 @@
-<h1> <%= t('.header') %></h1><br>
-
-<p>
-  <%= link_to t('admin.tests.new.header'), new_admin_test_path, class: 'button' %>
+<h2> <%= t('.header') %></h2>
+<p class="mt-3">
+  <%= link_to t('admin.tests.new.header'), new_admin_test_path, class: 'btn btn-outline-secondary' %>
 </p>
-
-<table>
+<table class="table table-hover mt-3">
   <tr>
     <th><%= t('admin.tests.show.title') %></th>
     <th><%= t('admin.tests.show.level') %></th>
     <th><%= t('admin.tests.show.category') %></th>
     <th><%= t('admin.tests.show.question quantity') %></th>
-  <th colspan="4"><%= t('.actions') %></th>
+    <th colspan="4" class="mid_align"><%= t('.actions') %></th>
 
   </tr>
   <%= render @tests %>
