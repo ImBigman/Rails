@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models:
+      test: "Test"
+
+    atributes:
+      test:
+        title: "Title"

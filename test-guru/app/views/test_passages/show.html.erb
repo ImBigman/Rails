@@ -1,14 +1,15 @@
-<h2>Passing the '<%= @test_passage.test.title %>' test</h2>
+<h2><%= t('.header',title: @test_passage.test.title) %></h2>
+<h3><%= t('.counter', current_question: @test_passage.test.questions.to_a.index(@test_passage.current_question) + 1, all_questions: @test_passage.test.questions.count) %></h3><br>
 <h3>
-  <%= @test_passage.current_question.body %> (current: <%= @test_passage.test.questions.to_a.index(@test_passage.current_question) + 1 %> from <%= @test_passage.test.questions.count %> questions)
+  <%= t('.title', title: @test_passage.current_question.body) %>
 </h3>
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids,  @test_passage.current_question.answers, :id, :body, include_hidden: false  do |a|%>
-    <p>
+    <p style="padding: 10px">
       <%= a.check_box id: "answer_ids_#{a.object.id}"%>
       <%= a.label %>
     </p>
   <% end %><br>
 
-  <p><%= form.submit 'Next' %></p>
+  <p><%= form.submit t('.next') %></p>
 <% end %>

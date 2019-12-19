@@ -1,11 +1,11 @@
-<h1> Tests </h1><br>
+<h1><%= t('tests.index.header') %></h1><br>
 <table>
   <tr>
-  <th>Title </th>
-  <th>Level</th>
-  <th>Category</th>
-  <th>Question quantity</th>
-  <th>Action</th>
+    <th><%= t('admin.tests.show.title') %></th>
+    <th><%= t('admin.tests.show.level') %></th>
+    <th><%= t('admin.tests.show.category') %></th>
+    <th><%= t('admin.tests.show.question quantity') %></th>
+    <th><%= t('admin.tests.index.actions') %></th>
   </tr>
   <%= render @tests %>
 </table>

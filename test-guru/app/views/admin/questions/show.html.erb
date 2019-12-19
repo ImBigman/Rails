@@ -1,4 +1,4 @@
-<h2><%= @question.test.title %> question </h2>
+<h2><%= @question.test.title %> question </h2><br>
 <p>Что вы можете рассказать о <%= @question.body %> ?</p>
 <table>
   <tr>
@@ -10,6 +10,6 @@
 <%= link_to 'New answer', new_admin_question_answer_path(@question) %>
 <ol>
   <%= render @question.answers %>
-</ol>
+</ol><br>
 
-<%= link_to 'Back', admin_test_path(@question.test) %>
+<%= link_to t('actions.back'), admin_test_path(@question.test), class: 'button' %>

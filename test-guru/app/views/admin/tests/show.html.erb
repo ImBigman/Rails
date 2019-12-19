@@ -1,10 +1,10 @@
 <table>
   <tr>
-    <th>Title</th>
-    <th>Level</th>
-    <th>Category</th>
-    <th>Question quantity</th>
-    <th>Question</th>
+    <th><%= t('.title') %></th>
+    <th><%= t('.level') %></th>
+    <th><%= t('.category') %></th>
+    <th><%= t('.question quantity') %></th>
+    <th><%= t('.question') %></th>
   </tr>
   <tr>
       <td><%= @test.title %></td>
@@ -12,14 +12,14 @@
       <td><%= @test.category.title %></td>
       <td class="mid_align"><%= @test.questions.count %></td>
       <td><% @test.questions.each do |question| %>
-          <p> <%= question.body  %> || <%= link_to 'Show', admin_question_path(question) %> || <%= link_to 'Edit', edit_admin_question_path(question) %> ||
-          <%= link_to 'Delete',
+          <p><li style="line-height: 200%"> <%= question.body  %> &nbsp;   <%= link_to t('actions.show'), admin_question_path(question) %> ::: <%= link_to t('actions.edit'), edit_admin_question_path(question) %> :::
+          <%= link_to t('actions.delete'),
                       admin_question_path(question),
                       method: :delete,
-                      data: {confirm: 'Are you sure?'} %></p>
+                      data: {confirm: 'Are you sure?'} %></li></p>
         <% end %></td>
   </tr>
 </table>
-<%= link_to 'Edit', edit_admin_test_path(@test) %> ||
-<%= link_to 'Back', admin_tests_path %> ||
-<%= link_to 'Add question', new_admin_test_question_path(@test) %>
+<%= link_to t('actions.edit'), edit_admin_test_path(@test), class: 'button' %>
+<%= link_to t('actions.back'), admin_tests_path, class: 'button' %>
+<%= link_to t('.add question'), new_admin_test_question_path(@test), class: 'button' %>

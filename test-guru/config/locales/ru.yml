@@ -1,0 +1,62 @@
+ru:
+  hello: 'Приветствуем тебя, %{name}!'
+  login: 'Вход во врата познаний'
+  selector: 'выберите категорию'
+  helpers:
+    submit:
+      test:
+        create: 'Создать тест'
+        update: 'Обновить тест'
+    label:
+      test:
+        title: 'Название:'
+        level: 'Уровень сложности:'
+        category_id: 'Категория теста'
+        author_id: 'Автор теста'
+  tests:
+    index:
+      header: 'Доступные тесты'
+      start: 'Начать прохождение'
+  test_passages:
+    show:
+      header: "Вы проходите тест по %{title}"
+      next: 'Следующий'
+      title: 'Вопрос: %{title}'
+      counter: "текущий вопрос: %{current_question} из %{all_questions} вопросов"
+    result:
+      header: "Вы закончили прохождение теста по %{test}!"
+      message:
+        one: "%{user}, вам удалось правильно ответить на %{count} вопрос."
+        few: "%{user}, вам удалось правильно ответить на %{count} вопроса."
+        many: "%{user}, вам удалось правильно ответить на %{count} вопросов."
+      fail: "Ваш результат составляет: %{result} % - тест считается не сданным!"
+      success: "Ваш результат составляет: %{result} % - тест пройден!"
+      back to tests: "Вернуться к списку тестов"
+  admin:
+    tests:
+      show:
+        title: 'Название теста'
+        level: 'Уровень сложности'
+        category: 'Категория'
+        question quantity: 'Количество вопросов'
+        question: 'Вопросы'
+        add question: 'Добавить вопрос'
+      new:
+        header: 'Создать новый тест'
+      create:
+
+        success: 'Тест успешно создан.'
+      index:
+        header: 'Доступные тесты'
+        actions: 'Доступные действия'
+      edit:
+        header: "Редактирование '%{title}' теста"
+        success: 'Тест успешно обновлен.'
+  actions: {
+    back: 'Назад',
+    show: 'Показать',
+    edit: 'Редактировать',
+    delete: 'Удалить',
+    enter: 'Войти'
+  }
+
