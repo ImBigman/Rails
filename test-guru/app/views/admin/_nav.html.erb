@@ -1,6 +1,24 @@
-<div class="nav nav-admin">
-  <span class="nav-admin title">TestGuru Admin Panel:</span>
- <div class="nav-admin user"> Welcome, <strong><%= current_user.login %></strong>  Guru! :::
-  <%= link_to 'Logout',  destroy_user_session_path, method: :delete, class: 'link' %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-admin">
+  <%=link_to image_tag("/test_logo.png", height: '100', width: '150'), admin_tests_path, class:"navbar-brand"%>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav font-weight-bolder text-uppercase h5">
+      <% if current_user.is_a?(Admin) %>
+        <%=link_to "Home", admin_tests_path, rel: "nofollow", class:"nav-item nav-link"%>
+      <% else %>
+        <%=link_to "Home", root_path, rel: "nofollow", class:"nav-item nav-link"%>
+      <% end %>
+      <%=link_to "Login",  new_user_session_path, rel: "nofollow", class: "nav-item nav-link" %>
+      <%=link_to "Register", new_user_registration_path , rel: "nofollow", class: "nav-item nav-link"%>
+    </div>
   </div>
-</div>
+  <span class="navbar-text font-weight-bolder rounded-lg text-white h6">
+    <% if user_signed_in? %>
+      Welcome, <b><%= current_user.login %></b> Guru! :::
+      <%= link_to 'Logout',  destroy_user_session_path, method: :delete, class: 'link text-decoration-none text-white' %>
+    <% end %><br>
+  </span>
+</nav>
+
+
+
+

@@ -1,7 +1,7 @@
 <h2><%= @question.test.title %> question </h2><br>
-<p>Что вы можете рассказать о <%= @question.body %> ?</p>
+<p class="h4">Что вы можете рассказать о <%= @question.body %> ?</p>
 <table>
-  <tr>
+  <tr class="h6">
     <td><strong>Test's title: </strong><%= @question.test.title  %></td>
     <td><strong>Question: </strong><%= @question.body %></td>
   </tr>
@@ -12,4 +12,4 @@
   <%= render @question.answers %>
 </ol><br>
 
-<%= link_to t('actions.back'), admin_test_path(@question.test), class: 'button' %>
+<%= link_to t('actions.back'), admin_test_path(@question.test), class: 'btn btn-outline-secondary' %>

@@ -1,9 +1,9 @@
 <li  style="line-height: 150%">
-  <%= answer.body %><br>
-  <%= link_to t('actions.show'), admin_answer_path(answer), class: 'button' %>
-  <%= link_to t('actions.edit'), edit_admin_answer_path(answer), class: 'button'  %>
+  <p class="mt-1"><%= answer.body %></p>
+  <p class="mt-1"><%= link_to t('actions.show'), admin_answer_path(answer), class: 'btn btn-outline-secondary' %>
+  <%= link_to t('actions.edit'), edit_admin_answer_path(answer), class: 'btn btn-outline-secondary'  %>
   <%= link_to t('actions.delete'),
               admin_answer_path(answer),
               method: :delete,
-              data: {confirm: 'Are you sure?'}, class: 'button'  %>
+              data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-secondary'  %></p>
 </li>
