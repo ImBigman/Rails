@@ -1,5 +1,6 @@
 en:
   hello: 'Hello, %{name}!'
+  admin-alert: 'You are not authorized to view this page!'
   login: 'Enter to Guru Gates'
   selector: 'choose the category'
   helpers:

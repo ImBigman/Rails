@@ -2,8 +2,12 @@
   <%=link_to image_tag("/test_logo.png", height: '100', width: '150'), root_path, class:"navbar-brand"%>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav font-weight-bolder text-uppercase h5">
-      <% if current_user.is_a?(Admin) %>
-        <%=link_to "Home", admin_tests_path, rel: "nofollow", class:"nav-item nav-link"%>
+      <% if user_signed_in? %>
+        <% if current_user.admin?%>
+            <%=link_to "Home", admin_tests_path, rel: "nofollow", class:"nav-item nav-link"%>
+          <% else %>
+            <%=link_to "Home", root_path, rel: "nofollow", class:"nav-item nav-link"%>
+          <% end %>
       <% else %>
         <%=link_to "Home", root_path, rel: "nofollow", class:"nav-item nav-link"%>
       <% end %>
