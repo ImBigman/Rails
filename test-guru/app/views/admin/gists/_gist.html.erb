@@ -1,0 +1,5 @@
+<tr>
+  <td class="mid_align"><%= link_to(truncate(gist.question_body, length: 25),admin_question_path(Question.find_by('id = :id', id: gist.question_id))) %></td>
+  <td class="mid_align"><%= link_to(gist.url,gist.url, target: "_blank") %></td>
+  <td class="mid_align"><%= gist.user %></td>
+</tr>

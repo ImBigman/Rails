@@ -1,15 +1,34 @@
 class Admin::QuestionsController <  Admin::BaseController
   before_action :find_test, only: %i[index new]
-  before_action :find_questions, only: %i[show edit]
+  before_action :find_questions, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_questions_not_found
 
   def index; end
 
-  def show;  end
+  def show; end
+
+  def edit; end
 
   def new
     @question = Question.new
+  end
+
+  def create
+    @question = @test.questions.new(question_params)
+    if @question.save
+      redirect_to admin_tests_path(@question)
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to admin_test_path(@question.test)
+    else
+      render :edit
+    end
   end
 
   private
@@ -20,6 +39,10 @@ class Admin::QuestionsController <  Admin::BaseController
 
   def find_questions
     @question = Question.find(params[:id])
+  end
+
+  def question_params
+    params.require(:question).permit(:body)
   end
 
   def rescue_with_questions_not_found

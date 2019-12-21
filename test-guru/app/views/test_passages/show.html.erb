@@ -1,5 +1,5 @@
 <h2><%= t('.header',title: @test_passage.test.title) %></h2>
-<h3><%= t('.counter', current_question: @test_passage.test.questions.to_a.index(@test_passage.current_question) + 1, all_questions: @test_passage.test.questions.count) %></h3><br>
+<h5><%= t('.counter', current_question: @test_passage.test.questions.to_a.index(@test_passage.current_question) + 1, all_questions: @test_passage.test.questions.count) %></h5><br>
 <h3>
   <%= t('.title', title: @test_passage.current_question.body) %>
 </h3>
@@ -11,5 +11,6 @@
     </p>
   <% end %><br>
 
+  <p><%= link_to t('.gist link'), gist_test_passage_path(@test_passage), method: :post, class:'btn btn-outline-info' %>
   <p><%= form.submit t('.next') %></p>
 <% end %>
