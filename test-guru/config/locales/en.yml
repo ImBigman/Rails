@@ -3,6 +3,8 @@ en:
   admin-alert: 'You are not authorized to view this page!'
   login: 'Enter to Guru Gates'
   selector: 'choose the category'
+  gist description: "A question about %{test} from TestGuru"
+  gist filename: '%{test}_question_№%{question}'
   helpers:
     submit:
       test:
@@ -24,6 +26,7 @@ en:
       next: 'Next'
       title: 'Question: %{title}'
       counter: "Current question: %{current_question} from %{all_questions} questions"
+      gist link: 'Gist Question'
     result:
       header: "The '%{test}' was completed!"
       message:
@@ -32,6 +35,9 @@ en:
       fail: "Your result is: %{result} % - you failed!"
       success: "Your result is: %{result} % - you passed!"
       back to tests: "Back to other tests"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gists!"
     admin:
       tests:
         show:
@@ -51,6 +57,11 @@ en:
         edit:
           header: "Edit '%{title}' test"
           success: 'Test was updated successfully.'
+      gists:
+        question: 'Question'
+        url: 'Link to Gist'
+        user: 'Sender'
+        gists header: 'Gists'
     actions: {
       back: 'Back',
       show: 'Show',

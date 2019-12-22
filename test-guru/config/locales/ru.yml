@@ -3,6 +3,8 @@ ru:
   admin-alert: 'У вас недостаточно прав доступа!'
   login: 'Вход во врата познаний'
   selector: 'выберите категорию'
+  gist description: "Вопрос из теста по %{test} от TestGuru"
+  gist filename: '%{test}_вопрос_№%{question}'
   helpers:
     submit:
       test:
@@ -24,6 +26,7 @@ ru:
       next: 'Следующий'
       title: 'Вопрос: %{title}'
       counter: "текущий вопрос: %{current_question} из %{all_questions} вопросов"
+      gist link: 'Создать Gist отчет'
     result:
       header: "Вы закончили прохождение теста по %{test}!"
       message:
@@ -33,6 +36,9 @@ ru:
       fail: "Ваш результат составляет: %{result} % - тест считается не сданным!"
       success: "Ваш результат составляет: %{result} % - тест пройден!"
       back to tests: "Вернуться к списку тестов"
+    gist:
+      success: "Gist успешно создан!"
+      failure: "Во время сохранения gists произошла ошибка!"
   admin:
     tests:
       show:
@@ -45,7 +51,6 @@ ru:
       new:
         header: 'Создать новый тест'
       create:
-
         success: 'Тест успешно создан.'
       index:
         header: 'Доступные тесты'
@@ -53,6 +58,12 @@ ru:
       edit:
         header: "Редактирование '%{title}' теста"
         success: 'Тест успешно обновлен.'
+    gists:
+      index:
+        question: 'Вопрос'
+        url: 'Ссылка на Gist'
+        user: 'Отправитель'
+        gists header: 'Существующие Gists'
   actions: {
     back: 'Назад',
     show: 'Показать',
