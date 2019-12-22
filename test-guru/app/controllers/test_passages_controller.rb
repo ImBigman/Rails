@@ -18,14 +18,15 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
-    new_gist = Gist.new(question_id: @test_passage.current_question.id, question_body: @test_passage.current_question.body, url: result.url, user: current_user.email)
-    new_gist.save
-    flash_options = if result.nil?
-                      { alert: t('.failure') }
-                    else
-                      { notice: t('.success') + " Gist: #{result.html_url}" }
-                    end
+    connection = GistQuestionService.new(@test_passage.current_question)
+    result = connection.call
+
+    if connection.success?
+      current_user.gists.create(question_id: @test_passage.current_question.id, url: result.html_url)
+      flash_options = { notice: t('.success') + " Gist: #{result.html_url}" }
+    else
+      flash_options = { alert: t('.failure') }
+    end
 
     redirect_to @test_passage, flash_options
   end

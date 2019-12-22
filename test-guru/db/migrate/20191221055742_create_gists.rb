@@ -1,10 +1,9 @@
 class CreateGists < ActiveRecord::Migration[6.0]
   def change
     create_table :gists do |t|
-      t.integer :question_id
-      t.string :question_body
+      t.references :question, foreign_key: true
+      t.references :user, foreign_key: true
       t.string :url
-      t.string :user
 
       t.timestamps
     end
