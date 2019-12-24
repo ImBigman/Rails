@@ -1,7 +1,10 @@
 ru:
   hello: 'Приветствуем тебя, %{name}!'
   admin-alert: 'У вас недостаточно прав доступа!'
+  password-alert: 'Не совпадает с паролем'
   login: 'Вход во врата познаний'
+  registration header: 'Стань Гуру'
+  registration: 'Зарегистрироваться'
   selector: 'выберите категорию'
   gist description: "Вопрос из теста по %{test} от TestGuru"
   gist filename: '%{test}_вопрос_№%{question}'
@@ -65,6 +68,13 @@ ru:
         user: 'Отправитель'
         gists header: 'Существующие Gists'
   actions: {
+    password: 'Пароль',
+    password confirmation: 'Подтверждение пароля',
+    all fields: 'Примечание: Все поля формы обязательны для заполнения.',
+    remember: 'Запомнить меня',
+    symbols length: 'символов минимум',
+    first name: 'Имя',
+    last name: 'Фамилия',
     back: 'Назад',
     show: 'Показать',
     edit: 'Редактировать',

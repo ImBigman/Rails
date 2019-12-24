@@ -1,15 +1,18 @@
 <h2> <%= t('.header') %></h2>
 <div class="row mt-3 text-center">
   <div class="col-6 content">
-    <%= link_to t('admin.tests.new.header'), new_admin_test_path, class: 'btn btn-outline-secondary' %>
+    <%= octicon "plus",height: 24, class: "mr-2 mt-2 float-left" %>  <%= link_to t('admin.tests.new.header'), new_admin_test_path, class: 'btn btn-outline-secondary float-left' %>
   </div>
   <div class="col-6 content">
-    <%= link_to t('admin.gists.index.gists header'), admin_gists_path, class: 'btn btn-outline-secondary' %>
+    <%= octicon "logo-gist",height: 24, class: "ml-2 mt-2 float-right" %> <%= link_to t('admin.gists.index.gists header'), admin_gists_path, class: 'btn btn-outline-secondary float-right' %>
   </div>
 </div>
-<table class="table table-hover mt-3">
+<table class="table">
   <tr>
-    <th><%= t('admin.tests.show.title') %></th>
+    <th class="sort-by-title pointer"><%= t('admin.tests.show.title') %>
+      <%= octicon "arrow-up", class: 'text-success hide' %>
+      <%= octicon "arrow-down", class: 'text-success hide' %>
+    </th>
     <th><%= t('admin.tests.show.level') %></th>
     <th><%= t('admin.tests.show.category') %></th>
     <th><%= t('admin.tests.show.question quantity') %></th>

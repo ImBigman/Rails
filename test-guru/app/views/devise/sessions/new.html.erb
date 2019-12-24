@@ -1,29 +1,29 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-4">
-      <div class="card border-primary bg-light">
+      <div class="card bg-light">
         <div class="card-body">
           <h4 class="card-title text-center"><%= t('login') %></h4>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">
             <p>
               <%= f.label :email %>
-              <%= f.email_field :email, autofocus: true, class:'form-control', placeholder: 'Enter email' %>
+              <%= f.email_field :email, autofocus: true, class:'form-control', placeholder: 'Email' %>
             </p>
             <p>
-              <%= f.label :password %>
-              <%= f.password_field :password, autocomplete: "off", class:'form-control', placeholder: 'Enter password' %>
+              <%= f.label t('actions.password') %>
+              <%= f.password_field :password, autocomplete: "off", class:'form-control', placeholder: t('actions.password') %>
             </p>
-
-            <% if devise_mapping.rememberable? %>
-              <div class="form-check">
-                <%= f.label :remember_me, class: 'form-check-label' do  %>
-                  <%= f.check_box :remember_me, class: 'form-check-input'%>
-                  Remember me
-                <% end %>
-              </div>
-            <% end %>
-
-            <%= f.submit t('actions.enter'), class: 'btn btn-primary' %>
+            <p>
+              <% if devise_mapping.rememberable? %>
+                <div class="form-check">
+                  <%= f.label :remember_me, class: 'form-check-label' do  %>
+                    <%= f.check_box :remember_me, class: 'form-check-input'%>
+                    <%= t('actions.remember') %>
+                  <% end %>
+                </div>
+               <% end %>
+            </p>
+            <%= f.submit t('actions.enter'), class: 'btn btn-primary' %> <%= octicon "sign-in", height: 48, class: "text-primary float-right" %>
           </div>
             <% end %>
             <%= render "devise/shared/links" %>

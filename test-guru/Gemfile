@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # UI
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+gem 'octicons_helper'
+gem 'popper_js', '~> 1.14.5'
 # NETWORKING
 gem 'faraday'
 gem 'octokit', '~> 4.0'

@@ -2,7 +2,11 @@ ru:
   activerecord:
     models:
       test: "Тест"
-
+      user: "Пользователь"
     atributes:
       test:
         title: "Название"
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+
