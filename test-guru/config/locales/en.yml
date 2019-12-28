@@ -8,6 +8,10 @@ en:
   selector: 'choose the category'
   gist description: "A question about %{test} from TestGuru"
   gist filename: '%{test}_question_№%{question}'
+  errors:
+    one: "%{count} error detected:"
+    few: "%{count} error detected:"
+    many: "%{count} errors detected:"
   helpers:
     submit:
       test:
@@ -57,6 +61,8 @@ en:
         index:
           header: 'Tests'
           actions: 'Actions'
+        form_inline:
+          submit: 'OK'
         edit:
           header: "Edit '%{title}' test"
           success: 'Test was updated successfully.'

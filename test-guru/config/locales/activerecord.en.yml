@@ -6,6 +6,9 @@ en:
     atributes:
       test:
         title: "Title"
+        level: 'Level'
+        category_id: 'Category'
+        category: 'Category'
       user:
         first_name: "First name"
         last_name: "Last name"

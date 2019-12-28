@@ -1,14 +1,18 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_test_passage, only: %i[show result update gist]
+  before_action :set_test_passage, only: %i[show result update gist progress]
+  before_action :progress, only: %i[show update]
 
-  def show; end
+  def show
+    @progress_percent = Float((@current_question_number * 100) / @all_questions).ceil
+  end
 
   def result; end
 
   def update
     @test_passage.accept!(params[:answer_ids])
-
+    @current_question_number += 1
+    @progress_percent = Float((@current_question_number * 100) / @all_questions).ceil
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
@@ -32,6 +36,11 @@ class TestPassagesController < ApplicationController
   end
 
   private
+
+  def progress
+    @current_question_number = @test_passage.test.questions.to_a.index(@test_passage.current_question) + 1
+    @all_questions = @test_passage.test.questions.count
+  end
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])

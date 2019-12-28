@@ -1,4 +1,4 @@
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('turbolinks:load', function() {
     let confirm_input = document.querySelector('.confirm-password');
     if (confirm_input) {confirm_input.addEventListener('input', validatePassword)}
 });

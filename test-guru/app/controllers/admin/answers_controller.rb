@@ -1,6 +1,6 @@
 class Admin::AnswersController <  Admin::BaseController
-  before_action :find_question, only: %i[new create]
-  before_action :set_answer, only: %i[show]
+  before_action :find_question, only: %i[new create destroy]
+  before_action :set_answer, only: %i[show destroy]
 
   def show; end
 
@@ -12,11 +12,17 @@ class Admin::AnswersController <  Admin::BaseController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to @answer
+      redirect_to admin_tests_path(@question.test)
     else
       render :new
     end
   end
+
+  def destroy
+    @answer.destroy
+    redirect_to admin_test_questions_path(@question)
+  end
+
   private
 
   def find_question

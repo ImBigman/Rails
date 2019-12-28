@@ -31,7 +31,7 @@
                 <p>
                   <%= f.label t('actions.password confirmation') %>
                   <%= f.password_field :password_confirmation, class:'form-control confirm-password', placeholder:t('actions.password confirmation') %>
-                <p class="text-danger hide"><%= t('password-alert')%></p>
+                <span class="text-danger hide"><%= t('password-alert')%></span>
                 <p class="text-muted"><%= t('actions.all fields')%></p>
                 </p>
                 <%=f.submit t('registration'), class: 'btn btn-primary mt-3' %> <%= octicon "checklist", height: 48, class: "text-success float-right check hide" %>
