@@ -1,7 +1,10 @@
 en:
   hello: 'Hello, %{name}!'
   admin-alert: 'You are not authorized to view this page!'
+  password-alert: "Doesn't match password"
   login: 'Enter to Guru Gates'
+  registration header: 'Become a Guru'
+  registration: 'Sign up'
   selector: 'choose the category'
   gist description: "A question about %{test} from TestGuru"
   gist filename: '%{test}_question_№%{question}'
@@ -62,10 +65,17 @@ en:
         url: 'Link to Gist'
         user: 'Sender'
         gists header: 'Gists'
-    actions: {
-      back: 'Back',
-      show: 'Show',
-      edit: 'Edit',
-      delete: 'Delete',
-      enter: 'Enter'
-    }
+  actions: {
+    password: 'Password',
+    password confirmation:  'Password confirmation',
+    all fields: 'Note. All the fields of the form are obligatory',
+    first name: 'First name',
+    last name: 'Last name',
+    remember: 'Remember me',
+    symbols length: 'minimum length',
+    back: 'Back',
+    show: 'Show',
+    edit: 'Edit',
+    delete: 'Delete',
+    enter: 'Enter'
+  }

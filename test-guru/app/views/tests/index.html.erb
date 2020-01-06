@@ -1,7 +1,10 @@
-<h2><%= t('tests.index.header') %></h2>
-<table class="table table-hover mt-3">
+<h2><%= t('tests.index.header') %></h2><br>
+<table class="table">
   <tr>
-    <th><%= t('admin.tests.show.title') %></th>
+    <th class="sort-by-title pointer"><%= t('admin.tests.show.title') %>
+      <%= octicon "arrow-up", class: 'text-success hide' %>
+      <%= octicon "arrow-down", class: 'text-success hide' %>
+    </th>
     <th class="text-center"><%= t('admin.tests.show.level') %></th>
     <th class="text-center"><%= t('admin.tests.show.category') %></th>
     <th class="text-center"><%= t('admin.tests.show.question quantity') %></th>

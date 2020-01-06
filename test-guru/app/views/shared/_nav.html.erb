@@ -4,20 +4,20 @@
     <div class="navbar-nav font-weight-bolder text-uppercase h5">
       <% if user_signed_in? %>
         <% if current_user.admin?%>
-            <%=link_to "Home", admin_tests_path, rel: "nofollow", class:"nav-item nav-link"%>
+          <%= octicon "home", height: 24, class: "mt-2" %> <%=link_to "Home", admin_tests_path, rel: "nofollow", class:"nav-item nav-link"%>
           <% else %>
-            <%=link_to "Home", root_path, rel: "nofollow", class:"nav-item nav-link"%>
+          <%= octicon "home", height: 24, class: "mt-2" %> <%=link_to "Home", root_path, rel: "nofollow", class:"nav-item nav-link"%>
           <% end %>
       <% else %>
-        <%=link_to "Home", root_path, rel: "nofollow", class:"nav-item nav-link"%>
+        <%= octicon "home",  height: 24, class: "mt-2" %> <%=link_to "Home", root_path, rel: "nofollow", class:"nav-item nav-link" %>
       <% end %>
-      <%=link_to "Login",  new_user_session_path, rel: "nofollow", class: "nav-item nav-link" %>
-      <%=link_to "Register", new_user_registration_path , rel: "nofollow", class: "nav-item nav-link"%>
+     <%= octicon "sign-in", height: 24, class: "mt-2"  %> <%=link_to "Login",  new_user_session_path, rel: "nofollow", class: "nav-item nav-link" %>
+      <%= octicon "person", height: 24, class: "mt-2"  %> <%=link_to "Register", new_user_registration_path , rel: "nofollow", class: "nav-item nav-link"%>
     </div>
   </div>
   <span class="navbar-text font-weight-bolder rounded-lg h6">
     <% if user_signed_in? %>
-      Welcome, <b><%= current_user.login %></b> Guru! :::
+      Welcome, <b><%= current_user.login %></b> Guru!  <%= octicon "kebab-vertical" %> <%= octicon "sign-out", height: 24, class: 'pl-1' %>
       <%= link_to 'Logout',  destroy_user_session_path, method: :delete, class: 'link text-decoration-none' %>
     <% end %>
   </span>
