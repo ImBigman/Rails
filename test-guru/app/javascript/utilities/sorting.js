@@ -28,7 +28,7 @@ let table = document.querySelector('table');
     
     sortedTable.classList.add('table')
     sortedTable.appendChild(rows[0])
-    sortedTable.classList.add('table-sm')
+    sortedTable.classList.add('table')
 
     for (let i = 0; i < sortedRows.length; i++) {
         sortedTable.appendChild(sortedRows[i])
