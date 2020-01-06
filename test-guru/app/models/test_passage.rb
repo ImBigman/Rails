@@ -30,6 +30,18 @@ class TestPassage < ApplicationRecord
     (Float(b * 100) / a).ceil
   end
 
+  def current_question_number
+    test.questions.to_a.index(current_question) + 1
+  end
+
+  def all_questions
+    test.questions.count
+  end
+
+  def progress
+    Float((current_question_number * 100) / all_questions).ceil
+  end
+
   private
 
   def before_validation_set_first_question

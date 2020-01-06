@@ -1,8 +1,8 @@
 <h2><%= t('.header',title: @test_passage.test.title) %></h2>
-<%= content_tag :h5,t('.counter', current_question: @current_question_number, all_questions: @all_questions), id: 'progress', data: {test_progress: @progress_percent.to_s + '%' }%>
+<%= content_tag :h5,t('.counter', current_question: @test_passage.current_question_number, all_questions: @test_passage.all_questions), id: 'progress', data: {test_progress: @test_passage.progress.to_s + '%' }%>
 
 <div class="progress" style="height: 40px;">
-  <div class="progress-bar bg-warning font-weight-bolder text-body" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><%= @progress_percent %>%</div>
+  <div class="progress-bar bg-warning font-weight-bolder text-body" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><%= @test_passage.progress %>%</div>
 </div>
 
 <h3>
