@@ -1,0 +1,6 @@
+ <p><strong><%= t('actions.first name')%>: </strong><%= @contact.name %></p>
+ <p><strong> email:</strong> <%= @contact.email%></p>
+ <p><strong><%= t('mail-text-field')%>: </strong><%= @contact.message %></p>
+<div>
+  <%= link_to t('actions.back'), root_path,class: 'btn btn-outline-secondary' %>
+</div>

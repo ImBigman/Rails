@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  define_model_callbacks :deliver
+  include MailForm::Delivery
+  attributes :name, :email, :message, :created_at
 
   devise :database_authenticatable,
          :registerable,

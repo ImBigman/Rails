@@ -32,4 +32,6 @@ Rails.application.routes.draw do
     resources :gists
   end
 
+  match '/contacts', to: 'contacts#new', via: 'get'
+  resources 'contacts', only: %i[new create]
 end

@@ -1,4 +1,12 @@
 en:
+  nav-home: 'Home'
+  nav-login: 'Login'
+  nav-register: 'Register'
+  nav-mail: 'Contacts'
+  mail-true: 'Thank you for your message. We will contact you soon!'
+  mail-false: 'Cannot send message.'
+  mail-header: 'Send A message to Us'
+  mail-text-field: 'Your message'
   hello: 'Hello, %{name}!'
   admin-alert: 'You are not authorized to view this page!'
   password-alert: "Doesn't match password"
@@ -83,5 +91,6 @@ en:
     show: 'Show',
     edit: 'Edit',
     delete: 'Delete',
-    enter: 'Enter'
+    enter: 'Enter',
+    mail-send: 'Send message'
   }

@@ -1,0 +1,9 @@
+  <%=content_tag :h4, t('mail-header'), class: 'mid_align' %>
+  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+    <%= f.input :name, label: t('actions.first name'), placeholder: t('actions.first name'), :required => true %>
+    <%= f.input :email, placeholder: 'Email address', :required => true %>
+    <%= f.input :message, label: t('mail-text-field'), placeholder: t('mail-text-field'), :as => :text, :required => true %>
+    <div  class="mid_align">
+      <%= f.button :submit, t('actions.mail-send'), :class=> "btn btn-outline-secondary" %>
+    </div>
+  <% end %>
