@@ -7,8 +7,8 @@ class Contact < MailForm::Base
   def headers
     {
       subject: "TestGuru contact's form",
-      to: ENV['SMTP_USERNAME'],
-      from: %("#{name}" <#{email}>)
+      to: ENV['ADMIN_MAIL'],
+      from: ENV['SENDERS_MAIL']
     }
   end
 end
