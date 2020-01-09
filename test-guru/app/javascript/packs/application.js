@@ -11,6 +11,8 @@ require("jquery")
 require("popper.js")
 require("utilities/sorting")
 require("utilities/password_validator")
+require("utilities/form_inline")
+require("utilities/progressbar")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

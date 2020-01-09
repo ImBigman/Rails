@@ -1,11 +1,16 @@
 <tr>
-  <td class="mid_align"><%= test.title %></td>
-  <td class="mid_align"><%= test.level %></td>
-  <td class="mid_align"><%= test.category.title %></td>
-  <td class="mid_align"><%= test.questions.count %></td>
-  <td><%= link_to t('actions.show'), admin_test_path(test), class: 'btn btn-outline-secondary' %></td>
-  <td><%= link_to t('actions.edit'), edit_admin_test_path(test), class: 'btn btn-outline-secondary' %></td>
-  <td>
+  <td class="mid_align align-middle ">
+    <%= content_tag :span, test.title, class: 'test-title', data: { test_id:  test.id } %>
+    <%= render 'form_inline', test: test == @test ? @test : test %>
+  </td>
+  <td class="mid_align align-middle"><%= test.level %></td>
+  <td class="mid_align align-middle"><%= test.category.title %></td>
+  <td class="mid_align align-middle"><%= test.questions.count %></td>
+  <td class="mid_align align-middle"><%= link_to t('actions.show'), admin_test_path(test), class: 'btn btn-outline-secondary' %></td>
+  <td class="mid_align align-middle"><%= link_to t('actions.edit'), edit_admin_test_path(test),
+                  data: { test_id:  test.id },
+                  class: 'btn btn-outline-secondary form-inline-link' %></td>
+  <td class="mid_align align-middle">
     <%= link_to t('actions.delete'),
                 admin_test_path(test),
                 method: :delete,

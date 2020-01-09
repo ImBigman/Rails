@@ -8,6 +8,10 @@ ru:
   selector: 'выберите категорию'
   gist description: "Вопрос из теста по %{test} от TestGuru"
   gist filename: '%{test}_вопрос_№%{question}'
+  errors:
+    one: "%{count} ошибка обнаружена:"
+    few: "%{count} ошибки обнаружены:"
+    many: "%{count} ошибок обнаружено:"
   helpers:
     submit:
       test:
@@ -26,7 +30,7 @@ ru:
   test_passages:
     show:
       header: "Вы проходите тест по %{title}"
-      next: 'Следующий'
+      next: 'Далее'
       title: 'Вопрос: %{title}'
       counter: "текущий вопрос: %{current_question} из %{all_questions} вопросов"
       gist link: 'Создать Gist отчет'
@@ -58,6 +62,8 @@ ru:
       index:
         header: 'Доступные тесты'
         actions: 'Доступные действия'
+      form_inline:
+        submit: 'OK'
       edit:
         header: "Редактирование '%{title}' теста"
         success: 'Тест успешно обновлен.'

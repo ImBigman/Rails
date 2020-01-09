@@ -7,8 +7,9 @@
     <%= octicon "logo-gist",height: 24, class: "ml-2 mt-2 float-right" %> <%= link_to t('admin.gists.index.gists header'), admin_gists_path, class: 'btn btn-outline-secondary float-right' %>
   </div>
 </div>
+<%= render 'shared/errors', resource: @test %>
 <table class="table">
-  <tr>
+  <tr class="text-center">
     <th class="sort-by-title pointer"><%= t('admin.tests.show.title') %>
       <%= octicon "arrow-up", class: 'text-success hide' %>
       <%= octicon "arrow-down", class: 'text-success hide' %>
