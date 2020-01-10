@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :authenticate_user!, only: %i[start]
+  before_action :authenticate_user!, only: %i[start index]
   before_action :find_test, only: %i[show start]
   before_action :user_signed_in?
 

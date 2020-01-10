@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  define_model_callbacks :deliver
+  include MailForm::Delivery
+  attributes :name, :email, :message, :created_at
 
   devise :database_authenticatable,
          :registerable,
@@ -7,10 +10,10 @@ class User < ApplicationRecord
          :validatable,
          :confirmable
 
-  has_many :test_passages
-  has_many :tests, through: :test_passages
-  has_many :author_tests, class_name: 'Test', foreign_key: :author_id
-  has_many :gists
+  has_many :test_passages, dependent: :destroy
+  has_many :tests, through: :test_passages, dependent: :destroy
+  has_many :author_tests, class_name: 'Test', foreign_key: :author_id, dependent: :destroy
+  has_many :gists, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true

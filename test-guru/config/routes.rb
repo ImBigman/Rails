@@ -32,4 +32,5 @@ Rails.application.routes.draw do
     resources :gists
   end
 
+  resources 'contacts', only: %i[new create]
 end

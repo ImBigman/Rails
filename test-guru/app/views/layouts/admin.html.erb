@@ -14,7 +14,7 @@
 <body>
 <%= render 'admin/nav' %>
 <div class="wrapper">
-  <div class="text-center font-weight-bolder h5 text-white text-uppercase bg-dark">TestGuru Admin panel</div>
+  <%=content_tag :div, t('admin-panel'), class: "text-center font-weight-bolder h5 text-white text-uppercase bg-dark" %>
     <div class="container">
       <div class="content">
        <%= flash_header %>

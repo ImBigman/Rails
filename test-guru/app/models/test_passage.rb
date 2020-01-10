@@ -39,7 +39,7 @@ class TestPassage < ApplicationRecord
   end
 
   def progress
-    Float((current_question_number * 100) / all_questions).ceil
+    Float(((current_question_number - 1) * 100) / all_questions).ceil
   end
 
   private
@@ -49,6 +49,8 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
+    return if answer_ids.nil?
+
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 

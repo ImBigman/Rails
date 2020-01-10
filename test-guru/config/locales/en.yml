@@ -1,4 +1,13 @@
 en:
+  nav-home: 'Home'
+  nav-login: 'Login'
+  nav-register: 'Register'
+  nav-mail: 'Contacts'
+  admin-panel: 'TestGuru Admin panel'
+  mail-true: 'Thank you for your message. We will contact you soon!'
+  mail-false: 'Cannot send message.'
+  mail-header: 'Send A message to Us'
+  mail-text-field: 'Your message'
   hello: 'Hello, %{name}!'
   admin-alert: 'You are not authorized to view this page!'
   password-alert: "Doesn't match password"
@@ -33,6 +42,8 @@ en:
       next: 'Next'
       title: 'Question: %{title}'
       counter: "Current question: %{current_question} from %{all_questions} questions"
+      counter-end: "You give answer to: %{current_question} from %{all_questions} questions"
+      progress-bar: "Test's passage progress:"
       gist link: 'Gist Question'
     result:
       header: "The '%{test}' was completed!"
@@ -83,5 +94,7 @@ en:
     show: 'Show',
     edit: 'Edit',
     delete: 'Delete',
-    enter: 'Enter'
+    enter: 'Enter',
+    mail-send: 'Send message',
+    logout: 'Logout'
   }

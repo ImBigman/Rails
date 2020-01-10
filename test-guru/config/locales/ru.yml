@@ -1,4 +1,13 @@
 ru:
+  nav-home: 'Главная'
+  nav-login: 'Войти'
+  nav-register: 'Стать Гуру'
+  nav-mail: 'Контакты'
+  admin-panel: 'Панель администратора TestGuru'
+  mail-true: 'Спасибо за ваше сообщение.'
+  mail-false: 'Сообщение отправть не удалось.'
+  mail-header: 'Отправьте нам сообщение:'
+  mail-text-field: 'Текст вашего сообщения'
   hello: 'Приветствуем тебя, %{name}!'
   admin-alert: 'У вас недостаточно прав доступа!'
   password-alert: 'Не совпадает с паролем'
@@ -33,6 +42,8 @@ ru:
       next: 'Далее'
       title: 'Вопрос: %{title}'
       counter: "текущий вопрос: %{current_question} из %{all_questions} вопросов"
+      counter-end: "Вы дали ответы на: %{current_question} из %{all_questions} вопросов"
+      progress-bar: 'Прогресс прохождения теста:'
       gist link: 'Создать Gist отчет'
     result:
       header: "Вы закончили прохождение теста по %{test}!"
@@ -85,6 +96,8 @@ ru:
     show: 'Показать',
     edit: 'Редактировать',
     delete: 'Удалить',
-    enter: 'Войти'
+    enter: 'Войти',
+    mail-send: 'Отправить сообщение',
+    logout: 'Выйти'
   }
 
