@@ -4,7 +4,6 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_first_question, on: :create
-  validates :terms_of_service, acceptance: { message: 'must be checked' }
 
   BOUNDARY_OF_SUCCESS = 85
 

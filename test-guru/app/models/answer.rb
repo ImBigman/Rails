@@ -8,6 +8,7 @@ class Answer < ApplicationRecord
 
   def validate_answers_quantity
     return unless question.answers.count >= 4
-      errors.add(:answer, message: "wrong quantity of answers!" )
+
+    errors.add(:answer, message: "wrong quantity of answers!" )
   end
 end
