@@ -13,13 +13,13 @@
       <% end %>
      <%= octicon "sign-in", height: 24, class: "mt-2"  %> <%=link_to t('nav-login'),  new_user_session_path, rel: "nofollow", class: "nav-item nav-link" %>
       <%= octicon "person", height: 24, class: "mt-2"  %> <%=link_to t('nav-register'), new_user_registration_path , rel: "nofollow", class: "nav-item nav-link"%>
-      <%= octicon "mail-read", height: 24, class: "mt-2"  %> <%=link_to t('nav-mail'), contacts_url , rel: "nofollow", class: "nav-item nav-link"%>
+      <%= octicon "mail-read", height: 24, class: "mt-2"  %> <%=link_to t('nav-mail'), new_contact_path , rel: "nofollow", class: "nav-item nav-link"%>
     </div>
   </div>
   <span class="navbar-text font-weight-bolder rounded-lg h6">
     <% if user_signed_in? %>
-      Welcome, <b><%= current_user.login %></b> Guru!  <%= octicon "kebab-vertical" %> <%= octicon "sign-out", height: 24, class: 'pl-1' %>
-      <%= link_to 'Logout',  destroy_user_session_path, method: :delete, class: 'link text-decoration-none' %>
+      <%= t('hello', name: current_user.login) %> <%= octicon "sign-out", height: 24, class: 'pl-1' %>
+      <%= link_to t('actions.logout'),  destroy_user_session_path, method: :delete, class: 'link text-decoration-none' %>
     <% end %>
   </span>
 </nav>

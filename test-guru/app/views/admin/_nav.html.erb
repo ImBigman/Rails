@@ -3,16 +3,16 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav font-weight-bolder text-uppercase h5">
       <% if current_user.is_a?(Admin) %>
-        <%= octicon "home", height: 24, class: "mt-2" %>  <%=link_to "Home", admin_tests_path, rel: "nofollow", class:"nav-item nav-link"%>
+        <%= octicon "home", height: 24, class: "mt-2" %>  <%=link_to t('nav-home'), admin_tests_path, rel: "nofollow", class:"nav-item nav-link"%>
       <% else %>
-        <%= octicon "home", height: 24, class: "mt-2" %>  <%=link_to "Home", root_path, rel: "nofollow", class:"nav-item nav-link"%>
+        <%= octicon "home", height: 24, class: "mt-2" %>  <%=link_to t('nav-home'), root_path, rel: "nofollow", class:"nav-item nav-link"%>
       <% end %>
     </div>
   </div>
   <span class="navbar-text font-weight-bolder rounded-lg text-white h6">
     <% if user_signed_in? %>
-      Welcome, <b><%= current_user.login %></b> Guru! <%= octicon "sign-out", height: 24, class: 'pl-1' %>
-      <%= link_to 'Logout',  destroy_user_session_path, method: :delete, class: 'link text-decoration-none text-white' %>
+      <%= t('hello', name: current_user.login) %> <%= octicon "sign-out", height: 24, class: 'pl-1' %>
+      <%= link_to t('actions.logout'),  destroy_user_session_path, method: :delete, class: 'link text-decoration-none text-white' %>
     <% end %><br>
   </span>
 </nav>

@@ -3,6 +3,7 @@ en:
   nav-login: 'Login'
   nav-register: 'Register'
   nav-mail: 'Contacts'
+  admin-panel: 'TestGuru Admin panel'
   mail-true: 'Thank you for your message. We will contact you soon!'
   mail-false: 'Cannot send message.'
   mail-header: 'Send A message to Us'
@@ -41,6 +42,8 @@ en:
       next: 'Next'
       title: 'Question: %{title}'
       counter: "Current question: %{current_question} from %{all_questions} questions"
+      counter-end: "You give answer to: %{current_question} from %{all_questions} questions"
+      progress-bar: "Test's passage progress:"
       gist link: 'Gist Question'
     result:
       header: "The '%{test}' was completed!"
@@ -92,5 +95,6 @@ en:
     edit: 'Edit',
     delete: 'Delete',
     enter: 'Enter',
-    mail-send: 'Send message'
+    mail-send: 'Send message',
+    logout: 'Logout'
   }
