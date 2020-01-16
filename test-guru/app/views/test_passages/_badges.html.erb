@@ -1,0 +1,9 @@
+<tr>
+  <% @test_passage.badges.each do |badge| %>
+    <td class="mid_align"><%= render inline: badge.url %>- </td>
+    <td class="mid_align"><%= badge.name %></td><br>
+  <%end %>
+</tr>
+
+
+

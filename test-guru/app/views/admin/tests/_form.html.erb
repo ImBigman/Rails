@@ -23,5 +23,5 @@
       <%= form.collection_select :author_id, User.all, :id, :first_name, prompt: true, :selected => current_user.id %>
     <% end %>
   </p><br>
-<%= form.submit class:'btn btn-outline-secondary' %>
+<%= form.submit class:'btn btn-outline-secondary' %><br>
 <% end %>

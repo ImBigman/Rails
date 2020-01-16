@@ -1,0 +1,18 @@
+<% if current_user.badges.exists? %>
+  <% current_user.badges.each do |badge| %>
+   <tr>
+      <td class="mid_align"><%= render inline: badge.url %></td>
+      <td class="mid_align"><%= badge.name %></td>
+      <td class="mid_align"><%= badge.created_at %></td>
+    </tr>
+  <%end %>
+<%else%>
+  <tr>
+    <td></td>
+    <td class="mid_align">  <%= t('badges.empty') %> </td>
+    <td></td>
+  </tr>
+<% end%>
+
+
+

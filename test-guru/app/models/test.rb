@@ -17,4 +17,5 @@ class Test < ApplicationRecord
   scope :normal, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
   scope :by_category, ->(category) { joins(:category).where('categories.title = :category', category: category) }
+  scope :by_level, ->(level) { where('level = :level', level: level) }
 end

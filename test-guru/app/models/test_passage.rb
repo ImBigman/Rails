@@ -2,6 +2,7 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
+  has_many :badges, dependent: :destroy
 
   before_validation :before_validation_set_first_question, on: :create
 
@@ -40,6 +41,22 @@ class TestPassage < ApplicationRecord
 
   def progress
     Float(((current_question_number - 1) * 100) / all_questions).ceil
+  end
+
+  def first_time
+    TestPassage.where(user_id: user.id).where(completed: true).where(test_id: test.id).count == 1
+  end
+
+  def badge_by(category)
+    completed = TestPassage.where(user_id: user.id).where(completed: true).map(&:test_id)
+    tests_exist = Test.by_category(category).map(&:id)
+    (completed & tests_exist).count == tests_exist.count
+  end
+
+  def badge_by_level(level)
+    completed = TestPassage.where(user_id: user.id).where(completed: true).map(&:test_id)
+    tests_exist = Test.by_level(level).map(&:id)
+    (completed & tests_exist).count == tests_exist.count
   end
 
   private

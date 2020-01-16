@@ -13,6 +13,7 @@
     <% if user_signed_in? %>
       <%= t('hello', name: current_user.login) %> <%= octicon "sign-out", height: 24, class: 'pl-1' %>
       <%= link_to t('actions.logout'),  destroy_user_session_path, method: :delete, class: 'link text-decoration-none text-white' %>
+      <br><%= octicon "verified", height: 24, class: 'pl-1' %> <%= link_to t('actions.badge-progress'), admin_badges_path, class: 'link text-decoration-none text-lowercase text-white' %>
     <% end %><br>
   </span>
 </nav>

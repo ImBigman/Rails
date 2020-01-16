@@ -44,6 +44,7 @@ en:
       counter: "Current question: %{current_question} from %{all_questions} questions"
       counter-end: "You give answer to: %{current_question} from %{all_questions} questions"
       progress-bar: "Test's passage progress:"
+      achive-header: 'You has achieved:'
       gist link: 'Gist Question'
     result:
       header: "The '%{test}' was completed!"
@@ -56,6 +57,19 @@ en:
     gist:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gists!"
+  badges:
+    first_time: "Achievement: on the first try successfully passage test of %{test}"
+    by_category: "Achievement: successfully passed all tests of %{category} category"
+    by_level: "Achievement: successfully passed all tests of %{level} difficulties level"
+    empty: 'You have no achievements'
+    empty-admin: "Achievements does't exist"
+    any: 'any'
+    index:
+      header: 'All achievements:'
+      description: 'Description'
+      time: 'Time'
+      picture: 'Badge'
+      user: 'User'
     admin:
       tests:
         show:
@@ -96,5 +110,6 @@ en:
     delete: 'Delete',
     enter: 'Enter',
     mail-send: 'Send message',
-    logout: 'Logout'
+    logout: 'Logout',
+    badge-progress: 'Achievements'
   }

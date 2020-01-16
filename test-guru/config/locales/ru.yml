@@ -44,6 +44,7 @@ ru:
       counter: "текущий вопрос: %{current_question} из %{all_questions} вопросов"
       counter-end: "Вы дали ответы на: %{current_question} из %{all_questions} вопросов"
       progress-bar: 'Прогресс прохождения теста:'
+      achive-header: 'Вы получили достижения:'
       gist link: 'Создать Gist отчет'
     result:
       header: "Вы закончили прохождение теста по %{test}!"
@@ -57,6 +58,19 @@ ru:
     gist:
       success: "Gist успешно создан!"
       failure: "Во время сохранения gists произошла ошибка!"
+  badges:
+    first_time: "Достижение: успешное прохождение %{test} теста с первой попытки"
+    by_category: "Достижение: успешное прохождение всех тестов категории %{category}"
+    by_level: "Достижение: успешное прохождение всех тестов %{level} уровня сложности"
+    empty: 'У вас еще нет достижений'
+    empty-admin: 'Достижений еще нет'
+    any: 'любого'
+    index:
+      header: 'Существующие достижения:'
+      description: 'Описание достижения'
+      time: 'Дата получения'
+      picture: 'Бейдж'
+      user: 'Пользователь'
   admin:
     tests:
       show:
@@ -98,6 +112,7 @@ ru:
     delete: 'Удалить',
     enter: 'Войти',
     mail-send: 'Отправить сообщение',
-    logout: 'Выйти'
+    logout: 'Выйти',
+    badge-progress: 'Достижения'
   }
 

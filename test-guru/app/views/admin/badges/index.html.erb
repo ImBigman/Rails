@@ -1,0 +1,26 @@
+<h3 class="text-center"><%= t('badges.index.header') %></h3><br>
+
+<table class="table">
+  <tr>
+    <td class="text-center"><%= octicon "star",height: 24, class: "mr-2 text-success" %> </td>
+    <td><%= t('badges.first_time', test: 'любого') %></td>
+  </tr>
+  <tr>
+    <td class="text-center"><%= octicon "repo-template",height: 24, class: "mr-2 text-primary" %> </td>
+    <td><%= t('badges.by_category', category: '') %></td>
+  </tr>
+  <tr>
+    <td class="text-center"><%= octicon "rocket",height: 24, class: "mr-2 text-danger" %> </td>
+    <td><%= t('badges.by_level', level: 'любого') %></td>
+  </tr>
+</table>
+<table class="table">
+  <tr>
+    <th class="text-center"><%= t('badges.index.user') %> </th>
+    <th class="text-center"><%= t('badges.index.picture') %> </th>
+    <th class="text-center"><%= t('badges.index.description') %></th>
+    <th class="text-center"><%= t('badges.index.time') %></th>
+  </tr>
+  <%=render 'badges' %>
+</table>
+
