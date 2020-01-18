@@ -64,12 +64,15 @@ en:
     empty: 'You have no achievements'
     empty-admin: "Achievements does't exist"
     any: 'any'
+    success: "Badge was successfully created!"
     index:
       header: 'All achievements:'
       description: 'Description'
+      created-time: 'Date of create'
       time: 'Time'
       picture: 'Badge'
       user: 'User'
+      test-title: 'Test title'
     admin:
       tests:
         show:
@@ -91,6 +94,17 @@ en:
         edit:
           header: "Edit '%{title}' test"
           success: 'Test was updated successfully.'
+      badges:
+        index:
+          button: "Create new achievement"
+          button2: "User's achievements"
+        new:
+          header: "Create achievement"
+          url-plasceholder: "Insert image's URL"
+          name-plasceholder: "Enter Name of achievement"
+          kind-plasceholder: "Enter Kind of achievement"
+          name-label: 'Name of achievement'
+          kind-label: 'Kind of achievement'
       gists:
         question: 'Question'
         url: 'Link to Gist'

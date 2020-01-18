@@ -1,7 +1,7 @@
 ru:
   nav-home: 'Главная'
   nav-login: 'Войти'
-  nav-register: 'Стать Гуру'
+  nav-register: 'Присоединиться'
   nav-mail: 'Контакты'
   admin-panel: 'Панель администратора TestGuru'
   mail-true: 'Спасибо за ваше сообщение.'
@@ -11,8 +11,8 @@ ru:
   hello: 'Приветствуем тебя, %{name}!'
   admin-alert: 'У вас недостаточно прав доступа!'
   password-alert: 'Не совпадает с паролем'
-  login: 'Вход во врата познаний'
-  registration header: 'Стань Гуру'
+  login: 'Вход'
+  registration header: 'Стань одним из нас'
   registration: 'Зарегистрироваться'
   selector: 'выберите категорию'
   gist description: "Вопрос из теста по %{test} от TestGuru"
@@ -65,11 +65,14 @@ ru:
     empty: 'У вас еще нет достижений'
     empty-admin: 'Достижений еще нет'
     any: 'любого'
+    success: "Достижение успешно создано!"
     index:
       header: 'Существующие достижения:'
       description: 'Описание достижения'
       time: 'Дата получения'
+      created-time: 'Дата создания'
       picture: 'Бейдж'
+      test-title: 'Тема теста'
       user: 'Пользователь'
   admin:
     tests:
@@ -98,6 +101,17 @@ ru:
         url: 'Ссылка на Gist'
         user: 'Отправитель'
         gists header: 'Существующие Gists'
+    badges:
+      index:
+        button: "Создать достижение"
+        button2: "Достижения пользователей"
+      new:
+        header: "Создайте достижение"
+        url-plasceholder: "Вставьте URL будущего достижения"
+        name-plasceholder: "Введите название достижения"
+        kind-plasceholder: "Введите тип достижения"
+        name-label: 'Название достижения'
+        kind-label: 'Тип достижения'
   actions: {
     password: 'Пароль',
     password confirmation: 'Подтверждение пароля',

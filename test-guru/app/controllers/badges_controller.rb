@@ -1,25 +1,16 @@
 class BadgesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_test_passage, only: %i[create]
+  before_action :find_badge, only: %i[show]
 
   def index
-    @badges = current_user.badges
-  end
-
-  def new
-    @badge = Badge.new
-  end
-
-  def create
-    @badge = @test_passage.user.badges.new(badge_params)
-
-    redirect_to result_test_passage_path(@test_passage) if @badge.save
+    @badges = Badge.all
+    @test_passages = TestPassage.all
   end
 
   private
 
-  def badge_params
-    params.require(:badge).permit(:name, :url)
+  def find_badge
+    @badge = Badge.find(params[:id])
   end
 
   def set_test_passage

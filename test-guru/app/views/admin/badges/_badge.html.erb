@@ -1,0 +1,11 @@
+ <tr>
+    <td class="mid_align"><%= render inline: badge.url %></td>
+    <td class="mid_align"><%= badge.name %></td>
+    <td class="mid_align"><%= badge.created_at %></td>
+    <td class="mid_align align-middle">
+     <%= link_to t('actions.delete'),
+                 admin_badge_path(badge),
+                 method: :delete,
+                 data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-secondary' %>
+    </td>
+ </tr>
