@@ -6,7 +6,10 @@ class TestPassagesController < ApplicationController
 
   def result
     @test_passage.success? ? @test_passage.update(completed: false) : @test_passage.update(completed: true)
-    BadgeService.new(@test_passage)
+    return unless @test_passage.completed == true
+
+    award = BadgeService.new(@test_passage)
+    award.call
   end
 
   def update

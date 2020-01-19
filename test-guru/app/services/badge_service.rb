@@ -1,12 +1,9 @@
 class BadgeService
   def initialize(test_passage)
     @test_passage = test_passage
-    deserve?
   end
 
-  def deserve?
-    return unless @test_passage.completed == true
-
+  def call
     Badge.all.each do |badge|
       @test_passage.user.badges << badge if send "#{badge.kind}_award?"
       @test_passage.badges << badge if send "#{badge.kind}_award?"
@@ -50,6 +47,4 @@ class BadgeService
     badges = @test_passage.user.badges.map{|badges| badges.kind}.to_a
     badges.zip(level).to_h
   end
-
 end
-
