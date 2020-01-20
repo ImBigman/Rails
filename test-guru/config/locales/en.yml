@@ -44,6 +44,8 @@ en:
       counter: "Current question: %{current_question} from %{all_questions} questions"
       counter-end: "You give answer to: %{current_question} from %{all_questions} questions"
       progress-bar: "Test's passage progress:"
+      progress-timer: 'Time left:'
+      endtime: 'Time is over!'
       achive-header: 'You has achieved:'
       gist link: 'Gist Question'
     result:
@@ -81,9 +83,11 @@ en:
           category: 'Category'
           question quantity: 'Question quantity'
           question: 'Questions'
+          duration: 'Duration'
           add question: 'Add question'
         new:
           header: 'Create new test'
+          timer: "Test's passage time"
         create:
           success: 'Test was created successfully.'
         index:

@@ -3,5 +3,6 @@
   <td class="mid_align"><%= test.level %></td>
   <td class="text-center"><%= test.category.title %></td>
   <td class="text-center"><%= test.questions.count %></td>
+  <td class="text-center"><%= test.timer %></td>
   <td class="text-center"> <%= button_to t('tests.index.start'), start_test_path(test), class:'btn btn-outline-secondary', :disabled => test.questions.count.zero? %></td>
 </tr>

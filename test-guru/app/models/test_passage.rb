@@ -44,6 +44,10 @@ class TestPassage < ApplicationRecord
     Float(((current_question_number - 1) * 100) / all_questions).ceil
   end
 
+  def end_time
+    created_at + (test.timer * 60)
+  end
+
   private
 
   def before_validation_set_first_question
@@ -63,4 +67,5 @@ class TestPassage < ApplicationRecord
   def next_question
     test.questions.order(:id).where('id > ?', current_question).first
   end
+
 end

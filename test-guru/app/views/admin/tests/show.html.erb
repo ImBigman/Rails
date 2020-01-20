@@ -4,6 +4,7 @@
     <th><%= t('.level') %></th>
     <th><%= t('.category') %></th>
     <th><%= t('.question quantity') %></th>
+    <th><%= t('.duration') %></th>
     <th><%= t('.question') %></th>
   </tr>
   <tr class="text-center" >
@@ -11,6 +12,7 @@
       <td class="mid_align"><%= @test.level %></td>
       <td><%= @test.category.title %></td>
       <td class="mid_align"><%= @test.questions.count %></td>
+      <td class="mid_align"><%= @test.timer %></td>
       <td class="text-left"><% @test.questions.each do |question| %>
           <p><li style="line-height: 200%"> <%= question.body  %> &nbsp;<br>   <%= link_to t('actions.show'), admin_question_path(question) %> ::: <%= link_to t('actions.edit'), edit_admin_question_path(question) %> :::
           <%= link_to t('actions.delete'),

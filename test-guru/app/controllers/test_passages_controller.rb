@@ -1,6 +1,7 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show result update gist progress]
+  before_action :create_gon, only: %i[show update]
 
   def show; end
 
@@ -40,5 +41,10 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def create_gon
+    gon.timer = @test_passage.end_time
+    gon.result = result_test_passage_path(@test_passage)
   end
 end

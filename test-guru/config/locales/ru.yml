@@ -44,6 +44,8 @@ ru:
       counter: "текущий вопрос: %{current_question} из %{all_questions} вопросов"
       counter-end: "Вы дали ответы на: %{current_question} из %{all_questions} вопросов"
       progress-bar: 'Прогресс прохождения теста:'
+      progress-timer: 'Оставшееся время:'
+      endtime: 'Время вышло!'
       achive-header: 'Вы получили достижения:'
       gist link: 'Создать Gist отчет'
     result:
@@ -78,13 +80,15 @@ ru:
     tests:
       show:
         title: 'Название теста'
-        level: 'Уровень сложности'
+        level: 'Сложность'
         category: 'Категория'
-        question quantity: 'Количество вопросов'
+        question quantity: 'Вопросов'
         question: 'Вопросы'
+        duration: 'Время'
         add question: 'Добавить вопрос'
       new:
         header: 'Создать новый тест'
+        timer: 'Длительность прохождения теста'
       create:
         success: 'Тест успешно создан.'
       index:
