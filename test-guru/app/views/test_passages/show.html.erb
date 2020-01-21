@@ -1,9 +1,8 @@
 <h2><%= t('.header',title: @test_passage.test.title) %></h2>
-<%= include_gon(:init => true) %>
 <%= content_tag :h5,t('.counter', current_question: @test_passage.current_question_number, all_questions: @test_passage.all_questions), id: 'progress', data: {test_progress: @test_passage.progress.to_s + '%' }%>
 <div class="row border rounded">
   <div class="col-md-4 content">
-    <%=content_tag :h5, t('.progress-timer'), id: 'timer-label', style: 'color: #846540', class: 'font-weight-bold mt-3' %>
+    <%=content_tag :h5, t('.progress-timer'), id: 'timer-label', style: 'color: #846540', class: 'font-weight-bold mt-3', data: { progress_timer: @test_passage.end_time } %>
   </div>
   <div class="col-md-8 content d-flex justify-content-end">
     <div id="clockdiv">
