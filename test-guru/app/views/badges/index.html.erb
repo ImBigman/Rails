@@ -1,0 +1,43 @@
+<h4 class="text-center"><%= t('.header') %></h4><br>
+<table class="table d-flex justify-content-center">
+  <tr>
+    <td class="text-center"><%= octicon "star",height: 24, class: "mr-2 text-success" %> </td>
+    <td><%= t('badges.first_time', test: 'любого') %></td>
+  </tr>
+  <tr>
+    <td class="text-center"><%= octicon "repo-template",height: 24, class: "mr-2 text-primary" %> </td>
+    <td><%= t('badges.by_category', category: '') %></td>
+  </tr>
+  <tr>
+    <td class="text-center"><%= octicon "rocket",height: 24, class: "mr-2 text-danger" %> </td>
+    <td><%= t('badges.by_level', level: 'любого') %></td>
+  </tr>
+</table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <table class="table d-flex justify-content-end">
+      <tr >
+        <th class="text-center"><%= t('.picture') %> </th>
+      </tr>
+       <%=render current_user.badges %>
+    </table>
+    </div>
+    <div class="col-md-8">
+      <table class="table d-flex justify-content-start">
+      <tr>
+        <th class="text-center"><%= t('.test-title') %> </th>
+        <th class="text-center"><%= t('admin.tests.show.category') %> </th>
+        <th class="text-center"><%= t('.time') %></th>
+      </tr>
+      <%=render @test_passages.where(user_id: current_user.id).joins(:badges) %>
+    </table>
+    </div>
+  </div>
+  <% unless current_user.badges.any? %>
+      <div class="col">
+       <%= content_tag :h6,  t('badges.empty'), class: "text-center text-danger " %>
+      </div>
+  <%end %>
+</div>
+

@@ -2,6 +2,8 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
+  has_and_belongs_to_many :badges
+  before_destroy { badges.clear }
 
   before_validation :before_validation_set_first_question, on: :create
 
@@ -42,6 +44,10 @@ class TestPassage < ApplicationRecord
     Float(((current_question_number - 1) * 100) / all_questions).ceil
   end
 
+  def end_time
+    created_at + (test.timer * 60)
+  end
+
   private
 
   def before_validation_set_first_question
@@ -61,4 +67,5 @@ class TestPassage < ApplicationRecord
   def next_question
     test.questions.order(:id).where('id > ?', current_question).first
   end
+
 end

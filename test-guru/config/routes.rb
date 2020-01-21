@@ -30,7 +30,10 @@ Rails.application.routes.draw do
       end
     end
     resources :gists
+    resources :badges
   end
 
   resources 'contacts', only: %i[new create]
+
+  resources :badges, only: :index
 end

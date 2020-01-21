@@ -1,0 +1,41 @@
+<h5 class="text-center"><%= t('badges.index.header') %></h5>
+<div class="row mt-3 text-center">
+  <div class="col-12 content d-flex justify-content-center">
+    <%= octicon "milestone",height: 24, class: "mp-2 mt-2 text-success" %> <%= link_to t('.button'), new_admin_badge_path, class: 'btn btn-outline-success ml-2' %>
+  </div>
+</div>
+<table class="table-sm d-flex justify-content-center">
+  <tr>
+    <th class="text-center"><%= t('badges.index.picture') %> </th>
+    <th class="text-center"><%= t('badges.index.description') %></th>
+    <th class="text-center"><%= t('badges.index.created-time') %></th>
+  </tr>
+  <%=render @badges %>
+  <% unless @badges.any? %>
+    <%=content_tag :p, t('badges.empty-admin'), class: "text-center text-uppercase text-danger" %>
+  <%end %>
+</table><br>
+<h6 class="text-center text-danger"><%= t('admin.badges.index.button2') %></h6>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <table class="table d-flex justify-content-end">
+        <tr>
+          <th class="text-center"><%= t('badges.index.picture') %> </th>
+        </tr>
+        <%=render 'all_badges' %>
+      </table>
+    </div>
+    <div class="col-md-8">
+      <table class="table d-flex justify-content-end">
+        <tr >
+          <th class="text-center"><%= t('badges.index.user') %> </th>
+          <th class="text-center"><%= t('badges.index.test-title') %> </th>
+          <th class="text-center"><%= t('admin.tests.show.category') %> </th>
+          <th class="text-center"><%= t('badges.index.time') %> </th>
+        </tr>
+        <%=render TestPassage.all.joins(:badges) %>
+      </table>
+    </div>
+  </div>
+</div>

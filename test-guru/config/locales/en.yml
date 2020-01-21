@@ -44,6 +44,9 @@ en:
       counter: "Current question: %{current_question} from %{all_questions} questions"
       counter-end: "You give answer to: %{current_question} from %{all_questions} questions"
       progress-bar: "Test's passage progress:"
+      progress-timer: 'Time left:'
+      endtime: 'Time is over!'
+      achive-header: 'You has achieved:'
       gist link: 'Gist Question'
     result:
       header: "The '%{test}' was completed!"
@@ -56,6 +59,22 @@ en:
     gist:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gists!"
+  badges:
+    first_time: "Achievement: on the first try successfully passage test of %{test}"
+    by_category: "Achievement: successfully passed all tests of %{category} category"
+    by_level: "Achievement: successfully passed all tests of %{level} difficulties level"
+    empty: 'You have no achievements'
+    empty-admin: "Achievements does't exist"
+    any: 'any'
+    success: "Badge was successfully created!"
+    index:
+      header: 'All achievements:'
+      description: 'Description'
+      created-time: 'Date of create'
+      time: 'Time'
+      picture: 'Badge'
+      user: 'User'
+      test-title: 'Test title'
     admin:
       tests:
         show:
@@ -64,9 +83,11 @@ en:
           category: 'Category'
           question quantity: 'Question quantity'
           question: 'Questions'
+          duration: 'Duration'
           add question: 'Add question'
         new:
           header: 'Create new test'
+          timer: "Test's passage time"
         create:
           success: 'Test was created successfully.'
         index:
@@ -77,6 +98,17 @@ en:
         edit:
           header: "Edit '%{title}' test"
           success: 'Test was updated successfully.'
+      badges:
+        index:
+          button: "Create new achievement"
+          button2: "User's achievements"
+        new:
+          header: "Create achievement"
+          url-plasceholder: "Insert image's URL"
+          name-plasceholder: "Enter Name of achievement"
+          kind-plasceholder: "Enter Kind of achievement"
+          name-label: 'Name of achievement'
+          kind-label: 'Kind of achievement'
       gists:
         question: 'Question'
         url: 'Link to Gist'
@@ -96,5 +128,6 @@ en:
     delete: 'Delete',
     enter: 'Enter',
     mail-send: 'Send message',
-    logout: 'Logout'
+    logout: 'Logout',
+    badge-progress: 'Achievements'
   }

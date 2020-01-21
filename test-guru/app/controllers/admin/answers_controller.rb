@@ -1,4 +1,4 @@
-class Admin::AnswersController <  Admin::BaseController
+class Admin::AnswersController < Admin::BaseController
   before_action :find_question, only: %i[new create destroy]
   before_action :set_answer, only: %i[show destroy]
 

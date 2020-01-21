@@ -1,13 +1,20 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show result update gist progress]
+  before_action :create_gon, only: %i[show update]
 
   def show; end
 
-  def result; end
+  def result
+    @test_passage.success? ? @test_passage.update(completed: false) : @test_passage.update(completed: true)
+    return unless @test_passage.completed == true
+
+    award = BadgeService.new(@test_passage)
+    award.call
+  end
 
   def update
-    @test_passage.accept!(params[:answer_ids]).nil?
+    @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
@@ -34,5 +41,10 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def create_gon
+    gon.timer = @test_passage.end_time
+    gon.result = result_test_passage_path(@test_passage)
   end
 end

@@ -1,6 +1,7 @@
 ru:
   activerecord:
     models:
+      user: 'Пользователь'
       test: 'Тест'
     attributes:
       test:
@@ -8,6 +9,10 @@ ru:
         level: 'Уровень'
         category_id: 'Категория'
         category: 'Категория'
+        timer: 'Длительность прохождения теста'
+      badges:
+        name: 'Название достижения'
+        kind: 'Тип достижения'
     errors:
       messages:
         errors_detected: 'Обнаружены ошибки:'

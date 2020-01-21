@@ -1,0 +1,5 @@
+<% Badge.all.joins(:test_passages).each do |badge|%>
+  <tr>
+    <td class="mid_align"><%= render inline: badge.url %></td>
+  </tr>
+<%end%>

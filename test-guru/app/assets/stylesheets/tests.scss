@@ -7,3 +7,40 @@ th, td {
 .mid_align {
   text-align: center
 }
+.timer {
+  font-family:sans-serif;
+  font-size: 32px;
+  color: #730E15;
+}
+
+
+#clockdiv{
+  font-family: sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 25px;
+}
+
+#clockdiv > div{
+  padding: 5px;
+  border-radius: 3px;
+  background: #cebfad;
+  display: inline-block;
+}
+
+#clockdiv div > span{
+  padding: 10px;
+  border-radius: 3px;
+  background: #b69068;
+  display: inline-block;
+}
+
+.visible{
+  display: block;
+}
+
+.hidden{
+  display: none;
+}

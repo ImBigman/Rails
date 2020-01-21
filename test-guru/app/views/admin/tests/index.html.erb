@@ -1,4 +1,4 @@
-<h2> <%= t('.header') %></h2>
+<h3 class="text-center"> <%= t('.header')  %></h3>
 <div class="row mt-3 text-center">
   <div class="col-6 content">
     <%= octicon "plus",height: 24, class: "mr-2 mt-2 float-left" %>  <%= link_to t('admin.tests.new.header'), new_admin_test_path, class: 'btn btn-outline-secondary float-left' %>
@@ -17,6 +17,7 @@
     <th><%= t('admin.tests.show.level') %></th>
     <th><%= t('admin.tests.show.category') %></th>
     <th><%= t('admin.tests.show.question quantity') %></th>
+    <th><%= t('admin.tests.show.duration') %></th>
     <th colspan="4" class="mid_align"><%= t('.actions') %></th>
 
   </tr>
