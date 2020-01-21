@@ -4,7 +4,7 @@ class BadgesController < ApplicationController
 
   def index
     @badges = Badge.all
-    @test_passages = TestPassage.all
+    @test_passages = TestPassage.all.where(user_id: current_user.id).joins(:badges)
   end
 
   private

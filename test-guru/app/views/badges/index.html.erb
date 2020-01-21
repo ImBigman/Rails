@@ -30,7 +30,7 @@
         <th class="text-center"><%= t('admin.tests.show.category') %> </th>
         <th class="text-center"><%= t('.time') %></th>
       </tr>
-      <%=render @test_passages.where(user_id: current_user.id).joins(:badges) %>
+      <%=render @test_passages %>
     </table>
     </div>
   </div>
