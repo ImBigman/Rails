@@ -9,6 +9,7 @@ class Admin::BadgesController < Admin::BaseController
 
   def index
     @badges = Badge.all
+    @test_passages = TestPassage.all.joins(:badges)
   end
 
   def create

@@ -1,13 +1,18 @@
 document.addEventListener('turbolinks:load', function () {
 
     let progressTimer = document.getElementById('clockdiv');
-    let deadLine = new Date(Date.parse(gon.timer) );
-    if (progressTimer) {createClock('clockdiv', deadLine)}
+    let timerData = document.getElementById('timer-label');
+
+    if (progressTimer && timerData) {
+        let endDate = timerData.getAttribute('data-progress-timer');
+        let deadLine = new Date(Date.parse(endDate) );
+        createClock('clockdiv', deadLine)
+    }
 
     function getTimeRemaining(endTime) {
-        var t = Date.parse(endTime) - Date.parse(new Date());
-        var seconds = Math.floor((t / 1000) % 60);
-        var minutes = Math.floor((t / 1000 / 60) % 60);
+        let t = Date.parse(endTime) - Date.parse(new Date());
+        let seconds = Math.floor((t / 1000) % 60);
+        let minutes = Math.floor((t / 1000 / 60) % 60);
         return {
             'total': t,
             'minutes': minutes,
@@ -26,7 +31,7 @@ document.addEventListener('turbolinks:load', function () {
 
             if (t.total <= 0) {
                 document.querySelector(".hidden-message").classList.remove('hide');
-                setInterval("window.location.href = gon.result", 7000);
+                setInterval("window.location.href =  document.location + '/result'", 3000);
                 clearInterval(timeInterval);
                 return 0;
             }
@@ -36,6 +41,4 @@ document.addEventListener('turbolinks:load', function () {
         let timeInterval = setInterval(updateClock, 1000);
     }
 
-// setInterval("window.location.href = gon.result", 4000);
 });
-

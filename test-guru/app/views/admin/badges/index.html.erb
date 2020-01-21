@@ -34,7 +34,7 @@
           <th class="text-center"><%= t('admin.tests.show.category') %> </th>
           <th class="text-center"><%= t('badges.index.time') %> </th>
         </tr>
-        <%=render TestPassage.all.joins(:badges) %>
+        <%=render @test_passages %>
       </table>
     </div>
   </div>

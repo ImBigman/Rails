@@ -45,7 +45,11 @@ class TestPassage < ApplicationRecord
   end
 
   def end_time
-    created_at + (test.timer * 60)
+    (created_at + (test.timer * 60)).to_s(:js_datetime)
+  end
+
+  def check_timer
+    end_time < Time.now.to_s(:js_datetime)
   end
 
   private
